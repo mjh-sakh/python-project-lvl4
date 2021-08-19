@@ -1,0 +1,12 @@
+.venv
+.vscode
+.idea
+.DS_Store
+*.swp
+dist
+__pycache__
+
+# Coverage
+.coverage
+coverage.xml
+htmlcov
