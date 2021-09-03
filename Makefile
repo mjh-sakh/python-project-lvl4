@@ -22,3 +22,5 @@ run:
 open:
 	open http://127.0.0.1:8000/
 
+export:
+	poetry export -f requirements.txt -o requirements.txt
