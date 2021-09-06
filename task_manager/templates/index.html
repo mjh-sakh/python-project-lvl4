@@ -1,2 +1,14 @@
-<h1>Hello, {{ who }}!</h1>
-<p>Note: you are on {{ env_type }} environment!</p>
+{% extends "base_welcome.html" %}
+{% load static %}
+{#{% load bootstrap4 %}#}
+
+{% block title %}
+{% endblock %}
+{% block content %}
+  <body>
+    <h1>Hello, {{ who }}!</h1>
+    <div>Note: you are on {{ env_type }} environment!</div>
+    <div>
+        <img src="{% static 'task_manager/ape.png' %}" class="rounded mx-auto d-block" alt="Hello!">
+    </div>
+{% endblock %}
