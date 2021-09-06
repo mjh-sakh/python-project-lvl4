@@ -6,6 +6,10 @@
 dist
 __pycache__
 
+# local deployment
+/staticfiles
+db.sqlite3
+
 # Coverage
 .coverage
 coverage.xml
