@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>{% translate "Username" %}</th>
+            <th>{% translate "Full name" %}</th>
+            <th>{% translate "Date joined" %}</th>
+            <th>{% translate "Actions" %}</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>id</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.first_name }} {{ user.last_name }}</td>
+            <td>{{ user.date_joined }}</td>
+            <td>Link to edit<br>Link to delete</td>
+        </tr>
+        {% empty %}
+        <h3>{% translate "No users" %}</h3>
+        {% endfor %}
+    </table>
+{% endblock %}
