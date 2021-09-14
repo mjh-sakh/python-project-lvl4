@@ -14,3 +14,12 @@ class UsersView(ListView):
     model = get_user_model()
     context_object_name = 'users'
     template_name = 'users_list.html'
+
+
+def user_update_view(request, user_id):
+    users = get_user_model()
+    user = users.objects.all().filter(id=user_id)[0]
+    return render(request, 'base_user.html', context={
+        'user': user,
+        'form_action': _('Update'),
+    })

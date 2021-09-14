@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-13 15:32+1100\n"
+"POT-Creation-Date: 2021-09-14 15:46+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/templates/base_user.html:6
+msgid "Update user information"
+msgstr "Обновить информацию о пользователе"
 
 #: task_manager/templates/base_user.html:10
 msgid "First name"
@@ -35,7 +39,7 @@ msgstr "Имя пользователя"
 
 #: task_manager/templates/base_user.html:27
 msgid "Required field. Max length is 150 symbols. Letter, numbers only."
-msgstr ""
+msgstr "Требуется заполнить. Максимальная длина 150 символов. Только буквы и цифры."
 
 #: task_manager/templates/base_user.html:34
 msgid "Password"
@@ -43,15 +47,15 @@ msgstr "Пароль"
 
 #: task_manager/templates/base_user.html:39
 msgid "Password min length is 8 symbols."
-msgstr ""
+msgstr "Минимальная длина пароля должна быть 8 символов."
 
-#: task_manager/templates/base_user.html:48
-msgid "Confirm password."
-msgstr "Подтвердите пароль."
+#: task_manager/templates/base_user.html:44
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
 
-#: task_manager/templates/base_user.html:54
+#: task_manager/templates/base_user.html:50
 msgid "Enter your password again to confirm."
-msgstr ""
+msgstr "Введите пароль еще один раз для подтверждения."
 
 #: task_manager/templates/users_list.html:9
 msgid "Full name"
@@ -72,3 +76,7 @@ msgstr "Нет пользователей"
 #: task_manager/views.py:9
 msgid "World"
 msgstr "всеобъемлющий мир"
+
+#: task_manager/views.py:24
+msgid "Update"
+msgstr "Обновить"
