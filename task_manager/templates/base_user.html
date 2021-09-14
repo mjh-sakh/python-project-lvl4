@@ -3,7 +3,7 @@
 
 {% block content %}
     <div>
-        <h1>{% block title %}{% translate "Update user information" %}{% endblock %}</h1>
+        <h1>{% block title %}{{ page_header }}{% endblock %}</h1>
 
         <form method="post">
             {% block user_data %}

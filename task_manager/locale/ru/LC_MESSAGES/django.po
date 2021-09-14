@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-14 15:46+1100\n"
+"POT-Creation-Date: 2021-09-14 21:44+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,9 +20,13 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/templates/base_user.html:6
-msgid "Update user information"
-msgstr "Обновить информацию о пользователе"
+#: task_manager/templates/base.html:20
+msgid "Logout"
+msgstr "Выйти"
+
+#: task_manager/templates/base.html:22
+msgid "Login"
+msgstr "Вход"
 
 #: task_manager/templates/base_user.html:10
 msgid "First name"
@@ -39,7 +43,8 @@ msgstr "Имя пользователя"
 
 #: task_manager/templates/base_user.html:27
 msgid "Required field. Max length is 150 symbols. Letter, numbers only."
-msgstr "Требуется заполнить. Максимальная длина 150 символов. Только буквы и цифры."
+msgstr ""
+"Требуется заполнить. Максимальная длина 150 символов. Только буквы и цифры."
 
 #: task_manager/templates/base_user.html:34
 msgid "Password"
@@ -57,6 +62,14 @@ msgstr "Подтвердите пароль"
 msgid "Enter your password again to confirm."
 msgstr "Введите пароль еще один раз для подтверждения."
 
+#: task_manager/templates/login.html:5
+msgid "Login form"
+msgstr "Регистрация"
+
+#: task_manager/templates/login.html:12 task_manager/views.py:47
+msgid "Register"
+msgstr "Зарегистрироваться"
+
 #: task_manager/templates/users_list.html:9
 msgid "Full name"
 msgstr "Полное имя"
@@ -73,10 +86,18 @@ msgstr "Действия"
 msgid "No users"
 msgstr "Нет пользователей"
 
-#: task_manager/views.py:9
+#: task_manager/views.py:12
 msgid "World"
 msgstr "всеобъемлющий мир"
 
-#: task_manager/views.py:24
+#: task_manager/views.py:36
+msgid "Update user information"
+msgstr "Обновить информацию о пользователе"
+
+#: task_manager/views.py:38
 msgid "Update"
 msgstr "Обновить"
+
+#: task_manager/views.py:45
+msgid "Registration"
+msgstr "Регистрация"

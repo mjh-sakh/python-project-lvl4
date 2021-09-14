@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from task_manager import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', views.index, name='home'),
     path('users/', views.UsersView.as_view(), name='users_list'),
+    path('login/', views.UserLoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(next_page='home'), name='logout'),
+    path('users/create', views.user_registration_view, name='user_register'),
     path('users/<int:user_id>/update', views.user_update_view, name="user_update"),
     path('admin/', admin.site.urls),
 ]
