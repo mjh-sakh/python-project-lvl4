@@ -24,3 +24,9 @@ open:
 
 export:
 	poetry export -f requirements.txt -o requirements.txt
+
+update-ru:
+	django-admin makemessages -l ru
+
+compile-all:
+	django-admin compilemessages
