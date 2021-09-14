@@ -2,6 +2,8 @@ from django.shortcuts import render
 from task_manager.settings import DEBUG
 from django.utils.translation import gettext as _
 from django.contrib.auth import get_user_model
+from django import forms
+from django.contrib.auth.forms import AuthenticationForm, UsernameField
 from django.contrib.auth.views import LoginView
 from django.views.generic.list import ListView
 from django.urls import reverse_lazy
@@ -14,10 +16,31 @@ def index(request):
     })
 
 
+class CustomAuthonticationForm(AuthenticationForm):
+    username = UsernameField(widget=forms.TextInput(attrs={
+        'autofocus': True,
+        'class': 'form-control',
+        'maxlength': 150,
+        'placeholder': _("username"),
+        'title': _("Required field. Max length is 150 symbols. Letter, numbers only."),
+
+    }))
+    password = forms.CharField(
+        label=_("Password"),
+        strip=False,
+        widget=forms.PasswordInput(attrs={
+            'autocomplete': 'current-password',
+            'class': 'form-control',
+            'placeholder': _("Password"),
+            'title': _("Password min length is 8 symbols."),
+        }),
+    )
+
 class UserLoginView(LoginView):
     template_name = 'login.html'
     fields = '__all__'
     redirect_authenticated_user = True
+    form_class = CustomAuthonticationForm
 
     def get_success_url(self):
         return reverse_lazy('users_list')
