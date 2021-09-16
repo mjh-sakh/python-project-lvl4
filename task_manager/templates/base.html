@@ -17,10 +17,10 @@
             <ul>
                 <li><a href="{% url 'home' %}">Main</a></li>
                 <li><a href="{% url 'users_list' %}">Users</a></li>
-                <li><a href="{% url 'user_register' %}">Register</a></li>
                 {% if request.user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">{% translate "Logout" %}</a></li>
                 {% else %}
+                <li><a href="{% url 'user_register' %}">Register</a></li>
                 <li><a href="{% url 'login' %}">{% translate "Login" %}</a></li>
                 {% endif  %}
             </ul>
