@@ -33,15 +33,6 @@ class UsersView(ListView):
     template_name = 'users_list.html'
 
 
-def user_registration_view(request):
-    users = get_user_model()
-    return render(request, 'base_user.html', context={
-        'page_header': _('Registration'),
-        'user': None,
-        'form_action': _('Register'),
-        })
-
-
 class UserUpdateView(UpdateView):
     model = get_user_model()
     template_name = 'base_user.html'
