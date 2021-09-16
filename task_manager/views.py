@@ -64,6 +64,10 @@ class UserUpdateView(UpdateView):
             }
         return self.form_class(**form_kwargs)
 
+    def form_valid(self, form):
+        messages.success(self.request, _('User information successfully updated.'))
+        return super().form_valid(form)
+
 
 class UserCreateView(UserUpdateView):
     success_url = reverse_lazy('login')
@@ -79,7 +83,7 @@ class UserCreateView(UserUpdateView):
 
     def form_valid(self, form):
         messages.success(self.request, _('User created. Please log-in.'))
-        return super().form_valid(form)
+        return super(UserUpdateView, self).form_valid(form)
 
 
 def delete_user(request, pk: int):
