@@ -1,19 +1,20 @@
-from django.shortcuts import render
-
-from task_manager.forms import CustomAuthenticationForm
-from task_manager.settings import DEBUG
-from django.utils.translation import gettext as _
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView
-from django.views.generic.list import ListView
+from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
+from django.views.generic import UpdateView
+from django.views.generic.list import ListView
+
+from task_manager.forms import CustomAuthenticationForm, CustomUserForm
+from task_manager.settings import DEBUG
 
 
 def index(request):
     return render(request, 'index.html', context={
         'who': _('World'),
         'env_type': 'dev' if DEBUG else 'prod',
-    })
+        })
 
 
 class UserLoginView(LoginView):
@@ -38,7 +39,7 @@ def user_registration_view(request):
         'page_header': _('Registration'),
         'user': None,
         'form_action': _('Register'),
-    })
+        })
 
 
 class UserUpdateView(UpdateView):

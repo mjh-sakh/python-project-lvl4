@@ -1,21 +1,18 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UsernameField, PasswordChangeForm
-# from django.
+from django.contrib.auth.forms import AuthenticationForm, UsernameField, SetPasswordForm
 from django.utils.translation import gettext as _
 
 
 class CustomAuthenticationForm(AuthenticationForm):
     username = UsernameField(
+        label=_("Username"),
         help_text=_("Required field. Max length is 150 symbols. Letter, numbers only."),
+        max_length=150,
         widget=forms.TextInput(attrs={
             'autofocus': True,
-            # 'class': 'form-control',
-            'maxlength': 150,
-            'help_text': 'i am so sad',
-            'show_help': True,
-            'placeholder': _("username"),
             'title': _("Required field. Max length is 150 symbols. Letter, numbers only."),
-    }))
+            }),
+        )
     password = forms.CharField(
         label=_("Password"),
         strip=False,
@@ -25,8 +22,8 @@ class CustomAuthenticationForm(AuthenticationForm):
             'class': 'form-control',
             'placeholder': _("Password"),
             'title': _("Password min length is 8 symbols."),
-        }),
-    )
+            }),
+        )
 
 
 class CustomUserForm(SetPasswordForm):
@@ -57,4 +54,3 @@ class CustomUserForm(SetPasswordForm):
         if commit:
             self.user.save()
         return self.user
-
