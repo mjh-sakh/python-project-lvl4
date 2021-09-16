@@ -1,20 +1,13 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load django_bootstrap5 %}
 
 {% block content %}
     <h1>{% translate "Login form" %}</h1>
     <form method="POST" class="container">
-        {% csrf_token %}
-        <div class="form-group"><label for="username">{% translate "Username" %}</label>
-            {{ form.username }}
-            <small class="form-text text-muted">{% translate "Required field. Max length is 150 symbols. Letter, numbers only." %}</small>
-        </div>
-        <div class="form-group"><label for="password">{% translate "Password" %}</label>
-            {{ form.password }}
-            <small class="form-text text-muted">{% translate "Password min length is 8 symbols." %}</small>
-        </div>
-        <div class="form-group">
-            <input class="btn btn-primary" type="submit" value="{% translate "Register" %}">
-        </div>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% translate "Login" as button_text %}
+    {% bootstrap_button button_type='submit' content=button_text %}
     </form>
 {% endblock %}
