@@ -30,3 +30,8 @@ update-ru:
 
 compile-all:
 	django-admin compilemessages
+	
+init:
+	python manage.py migrate
+	python manage.py collectstatic
+	python manage.py createsuperuser
