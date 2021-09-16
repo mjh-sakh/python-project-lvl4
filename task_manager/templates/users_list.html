@@ -16,7 +16,9 @@
             <td>{{ user.username }}</td>
             <td>{{ user.first_name }} {{ user.last_name }}</td>
             <td>{{ user.date_joined }}</td>
-            <td><a href="{% url 'user_update' user.id %}">Edit</a><br>Delete</td>
+            <td>
+                <a href="{% url 'user_update' user.id %}">Edit</a><br>
+                Delete</td>
         </tr>
         {% empty %}
         <h3>{% translate "No users" %}</h3>
