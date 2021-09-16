@@ -69,6 +69,8 @@ class UserUpdateView(UpdateView):
 
 
 class UserCreateView(UserUpdateView):
+    success_url = reverse_lazy('login')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['page_header'] = _('Registration')
