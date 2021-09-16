@@ -26,7 +26,7 @@ msgstr "Выйти"
 
 #: task_manager/templates/base.html:22
 msgid "Login"
-msgstr "Вход"
+msgstr "Войти"
 
 #: task_manager/templates/base_user.html:10
 msgid "First name"
@@ -64,7 +64,7 @@ msgstr "Введите пароль еще один раз для подтвер
 
 #: task_manager/templates/login.html:5
 msgid "Login form"
-msgstr "Регистрация"
+msgstr "Вход"
 
 #: task_manager/templates/login.html:12 task_manager/views.py:47
 msgid "Register"
