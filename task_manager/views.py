@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'index.html', context={
         'who': _('World'),
         'env_type': 'dev' if DEBUG else 'prod',
-        })
+    })
 
 
 class UserLoginView(LoginView):
@@ -55,13 +55,13 @@ class UserUpdateView(UpdateView):
         form_kwargs = self.get_form_kwargs()
         user = form_kwargs['instance']
         form_kwargs['user'] = user
-        del form_kwargs['instance']
+        form_kwargs.pop('instance')
         if user is not None:
             form_kwargs['initial'] = {
                 'first_name': user.first_name,
                 'last_name': user.last_name,
                 'username': user.username,
-                }
+            }
         return self.form_class(**form_kwargs)
 
 
@@ -89,4 +89,4 @@ def delete_user(request, pk: int):
         user.delete()
         messages.success(request, _('User deleted 😢'))
         return HttpResponseRedirect(reverse_lazy('home'))
-    return render(request, "user_delete.html", context={'user': user})
+    return render(request, 'user_delete.html', context={'user': user})
