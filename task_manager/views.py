@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
@@ -70,3 +71,13 @@ class UserCreateView(UserUpdateView):
 
     def get_object(self, queryset=None):
         return self.model()
+
+
+def delete_user(request, pk: int):
+    users = get_user_model()
+    user = users.objects.get(pk=pk)
+    if request.method == 'POST':
+        user.delete()
+        messages.success(request, _('User deleted 😢'))
+        return HttpResponseRedirect(reverse_lazy('home'))
+    return render(request, "user_delete.html", context={'user': user})
