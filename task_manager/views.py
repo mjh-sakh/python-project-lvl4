@@ -83,7 +83,7 @@ class UserCreateView(UserUpdateView):
 
     def form_valid(self, form):
         messages.success(self.request, _('User created. Please log-in.'))
-        return super(UserUpdateView, self).form_valid(form)
+        return super(UserUpdateView, self).form_valid(form)  # noqa: WPS608 as need to bypass UpdateView message
 
 
 def delete_user(request, pk: int):
