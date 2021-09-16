@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect
@@ -25,7 +26,11 @@ class UserLoginView(LoginView):
     form_class = CustomAuthenticationForm
 
     def get_success_url(self):
-        return reverse_lazy('users_list')
+        return reverse_lazy('home')
+
+    def form_valid(self, form):
+        messages.success(self.request, _('Welcome back'))
+        return super().form_valid(form)
 
 
 class UsersView(ListView):
@@ -71,6 +76,10 @@ class UserCreateView(UserUpdateView):
 
     def get_object(self, queryset=None):
         return self.model()
+
+    def form_valid(self, form):
+        messages.success(self.request, _('User created. Please log-in.'))
+        return super().form_valid(form)
 
 
 def delete_user(request, pk: int):
