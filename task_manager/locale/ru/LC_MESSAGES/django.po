@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-14 21:44+1100\n"
+"POT-Creation-Date: 2021-09-17 14:26+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,84 +20,111 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/templates/base.html:20
-msgid "Logout"
-msgstr "Выйти"
-
-#: task_manager/templates/base.html:22
-msgid "Login"
-msgstr "Войти"
-
-#: task_manager/templates/base_user.html:10
-msgid "First name"
-msgstr "Имя"
-
-#: task_manager/templates/base_user.html:16
-msgid "Last name"
-msgstr "Фамилия"
-
-#: task_manager/templates/base_user.html:22
-#: task_manager/templates/users_list.html:8
+#: task_manager/forms.py:8 task_manager/forms.py:31
+#: task_manager/templates/users_list.html:10
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: task_manager/templates/base_user.html:27
+#: task_manager/forms.py:9 task_manager/forms.py:13 task_manager/forms.py:32
+#: task_manager/forms.py:36
 msgid "Required field. Max length is 150 symbols. Letter, numbers only."
-msgstr ""
-"Требуется заполнить. Максимальная длина 150 символов. Только буквы и цифры."
+msgstr "Требуется заполнить. Максимальная длина 150 символов. Только буквы и цифры."
 
-#: task_manager/templates/base_user.html:34
+#: task_manager/forms.py:17 task_manager/forms.py:23
 msgid "Password"
 msgstr "Пароль"
 
-#: task_manager/templates/base_user.html:39
+#: task_manager/forms.py:19 task_manager/forms.py:24
 msgid "Password min length is 8 symbols."
 msgstr "Минимальная длина пароля должна быть 8 символов."
 
-#: task_manager/templates/base_user.html:44
-msgid "Confirm password"
-msgstr "Подтвердите пароль"
+#: task_manager/forms.py:40
+msgid "First name"
+msgstr "Имя"
 
-#: task_manager/templates/base_user.html:50
-msgid "Enter your password again to confirm."
-msgstr "Введите пароль еще один раз для подтверждения."
+#: task_manager/forms.py:44
+msgid "Last name"
+msgstr "Фамилия"
 
-#: task_manager/templates/login.html:5
+#: task_manager/templates/base.html:21
+msgid "Logout"
+msgstr "Выйти"
+
+#: task_manager/templates/base.html:24 task_manager/templates/login.html:11
+msgid "Login"
+msgstr "Войти"
+
+#: task_manager/templates/login.html:7
 msgid "Login form"
 msgstr "Вход"
 
-#: task_manager/templates/login.html:12 task_manager/views.py:47
-msgid "Register"
-msgstr "Зарегистрироваться"
+#: task_manager/templates/user_delete.html:6
+msgid "User deletion"
+msgstr "Удаление пользователя"
 
-#: task_manager/templates/users_list.html:9
+#: task_manager/templates/user_delete.html:7
+#: then username follows
+msgid "Are you sure you want to delete user"
+msgstr "Вы уверены что хотите удалить пользовател"
+
+#: task_manager/templates/user_delete.html:11
+msgid "Yes, sure!"
+msgstr "Да, уверен!"
+
+#: task_manager/templates/users_list.html:11
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/templates/users_list.html:10
+#: task_manager/templates/users_list.html:12
 msgid "Date joined"
 msgstr "Дата регистрации"
 
-#: task_manager/templates/users_list.html:11
+#: task_manager/templates/users_list.html:13
 msgid "Actions"
 msgstr "Действия"
 
-#: task_manager/templates/users_list.html:22
+#: task_manager/templates/users_list.html:26
 msgid "No users"
 msgstr "Нет пользователей"
 
-#: task_manager/views.py:12
+#: task_manager/views.py:17
 msgid "World"
 msgstr "всеобъемлющий мир"
 
-#: task_manager/views.py:36
+#: task_manager/views.py:32
+msgid "Welcome back"
+msgstr "Рады вас видеть снова"
+
+#: task_manager/views.py:50
 msgid "Update user information"
 msgstr "Обновить информацию о пользователе"
 
-#: task_manager/views.py:38
+#: task_manager/views.py:51
 msgid "Update"
 msgstr "Обновить"
 
-#: task_manager/views.py:45
+#: task_manager/views.py:68
+msgid "User information successfully updated."
+msgstr "Данные пользователя успешно обновлены."
+
+#: task_manager/views.py:77
 msgid "Registration"
 msgstr "Регистрация"
+
+#: task_manager/views.py:78
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: task_manager/views.py:85
+msgid "User created. Please log-in."
+msgstr "Пользователь создан. Пожалуйста, авторизируйтесь."
+
+#: task_manager/views.py:94
+msgid "User deleted 😢"
+msgstr "Пользователь удален 😢"
+
+#~ msgid "Confirm password"
+#~ msgstr "Подтвердите пароль"
+
+#~ msgid "Enter your password again to confirm."
+#~ msgstr "Введите пароль еще один раз для подтверждения."
