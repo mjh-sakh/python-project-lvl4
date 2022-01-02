@@ -10,7 +10,7 @@ reps:
 	poetry show --tree
 
 test:
-	poetry run mypy task_manager
+	#poetry run mypy task_manager
 	poetry run coverage run -m pytest
 
 coverage:
