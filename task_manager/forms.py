@@ -10,18 +10,17 @@ class CustomAuthenticationForm(AuthenticationForm):
         max_length=150,
         widget=forms.TextInput(attrs={
             'autofocus': True,
-            'title': _("Required field. Max length is 150 symbols. Letter, numbers only."),
             }),
         )
     password = forms.CharField(
         label=_("Password"),
         strip=False,
-        help_text=_("Password min length is 8 symbols."),
+        # help_text=_("Password min length is 8 symbols."),
         widget=forms.PasswordInput(attrs={
             'autocomplete': 'current-password',
             'class': 'form-control',
             'placeholder': _("Password"),
-            'title': _("Password min length is 8 symbols."),
+            # 'title': _("Password min length is 8 symbols."),
             }),
         )
 

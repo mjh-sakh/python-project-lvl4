@@ -17,6 +17,7 @@ coverage:
 	poetry run coverage xml
 
 covhtml:
+	poetry run coverage run -m pytest
 	rm -r htmlcov
 	poetry run coverage html
 	open htmlcov/index.html
