@@ -16,6 +16,11 @@ test:
 coverage:
 	poetry run coverage xml
 
+covhtml:
+	rm -r htmlcov
+	poetry run coverage html
+	open htmlcov/index.html
+
 run:
 	python manage.py runserver
 
