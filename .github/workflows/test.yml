@@ -21,9 +21,6 @@ jobs:
         
       - name: set up poetry
         run: make install
-        
-      - name: set secret key for Django
-        run: export SECRET_KEY = ${{ 
 
       - name: Run tests
         env:
