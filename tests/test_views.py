@@ -3,7 +3,8 @@ import random
 import pytest
 from django.test import Client
 from django.urls import reverse
-from pytest_django.asserts import assertTemplateUsed
+from django.contrib.auth.models import User
+from pytest_django.asserts import assertTemplateUsed, assertContains
 from task_manager import views
 
 
