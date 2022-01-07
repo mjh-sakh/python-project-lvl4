@@ -21,8 +21,13 @@ jobs:
         
       - name: set up poetry
         run: make install
+        
+      - name: set secret key for Django
+        run: export SECRET_KEY = ${{ 
 
       - name: Run tests
+        env:
+          SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
         run: make test
       
       - name: create coverage report for CodeClimate
