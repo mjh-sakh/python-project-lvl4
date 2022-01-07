@@ -20,7 +20,7 @@
                 {% if request.user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">{% translate "Logout" %}</a></li>
                 {% else %}
-                <li><a href="{% url 'user_register' %}">Register</a></li>
+                <li><a href="{% url 'user_register' %}">{% translate "Register" %}</a></li>
                 <li><a href="{% url 'login' %}">{% translate "Login" %}</a></li>
                 {% endif  %}
             </ul>
@@ -36,7 +36,9 @@
     <div id="footer">
         {% block footer %}
             <hr>
-            I'm at the bottom
+            <p style="text-align:center">
+            Sourcecode can be viewed here at <a href="https://github.com/mjh-sakh/python-project-lvl4">GitHub</a>.
+            </p>
         {% endblock %}
     </div>
     <!-- Bootstrap Bundle with Popper -->
